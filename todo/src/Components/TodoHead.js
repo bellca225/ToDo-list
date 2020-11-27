@@ -25,7 +25,11 @@ const TodoHeadBlock = styled.div`
 `;
 
 function TodoHead() {
-  return <div></div>;
+  return (
+    <TodoHeadBlock>
+      <h1>2020년 11월 27일</h1>
+    </TodoHeadBlock>
+  );
 }
 
 export default TodoHead;

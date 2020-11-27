@@ -13,6 +13,7 @@ function App() {
     <>
       <TodoTemplate>Hi</TodoTemplate>
       <GlobalStyle />
+      <div className="day">일요일</div>
     </>
   );
 }
