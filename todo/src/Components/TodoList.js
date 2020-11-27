@@ -10,7 +10,7 @@ const TodoListBlock = styled.div`
 `;
 
 function TodoList() {
-  return <TodoListBlock>TodoList</TodoListBlock>;
+  return <TodoListBlock>TodoList text</TodoListBlock>;
 }
 
 export default TodoList;
