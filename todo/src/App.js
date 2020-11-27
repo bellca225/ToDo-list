@@ -1,14 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    background:#eee;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>todo list 만들기 시작</p>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <div>안녕하세요</div>
+    </>
   );
 }
 
