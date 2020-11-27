@@ -1,10 +1,11 @@
+ToDo List 만들기 앱입니다.
+
 라이브러리 설치
 
 1. yarn add react-icons
-
 2. yarn add styled-components
 
-yarn add styled-components react-icons
+(= yarn add styled-components react-icons)
 
 ---
 
@@ -17,3 +18,5 @@ Component
 4. TodoCreate (처음에는 파란 +버튼이 뜸, 클릭하면 입력창이 뜸, 엔터를 누르면 새로운 항목이 나타나면서 버튼이 빨간 X로 바뀐다. X를 누르면 입력창이 사라진다)
 
 5. page에 회색 배경색상 적용 -> body에 global style 적용
+
+https://yeun.github.io/open-color/ 색상 참고
