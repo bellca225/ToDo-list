@@ -4,7 +4,7 @@ import TodoTemplate from "./Components/TodoTemplate";
 
 const GlobalStyle = createGlobalStyle`
   body{
-    background-color:#ddd;
+    background-color:#f8f9fa;
   }
 `;
 
