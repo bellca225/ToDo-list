@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const TodoTemplateBlock = styled.div`
   width: 512px;
-  height: 468px;
+  height: 768px;
 
   postion: relative;
-  backgroud-color: #fff;
+  background: #fff;
   border-radius: 16px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 
@@ -15,7 +15,7 @@ const TodoTemplateBlock = styled.div`
   margin-bottom: 32px;
 
   display: flex;
-  flex-drection: colum;
+  flex-direction: column;
 `;
 
 function TodoTemplate({ children }) {

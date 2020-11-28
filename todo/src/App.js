@@ -6,8 +6,8 @@ import TodoList from "./Components/TodoList";
 import TodoTemplate from "./Components/TodoTemplate";
 
 const GlobalStyle = createGlobalStyle`
-  body{
-    background-color:#f8f9fa;
+  body {
+    background:#f8f9fa;
   }
 `;
 

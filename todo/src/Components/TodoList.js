@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 const TodoListBlock = styled.div`
   flex: 1; // 자신이 차지할 수 있는 모든 영역을 차지함
-  padding: 20px 32px;
-  badding-bottom: 48px;
+  padding: 20px 32px 48px 32px;
   overflow-y: auto;
-  background: #aaa;
+  // background: grey;
 `;
 
 function TodoList() {
