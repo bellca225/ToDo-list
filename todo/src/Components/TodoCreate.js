@@ -13,14 +13,14 @@ const CircleButton = styled.button`
 
   z-index: 5;
   cursor: pointer;
-
+  margin: 0 auto;
   width: 80px;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transform: translate(-50%, 50%); // 정확한 버튼의 위치를 찾도록 함
+  transform: translate(0, 50%); // 정확한 버튼의 위치를 찾도록 함
 
   font-size: 60px;
   color: #fff;
@@ -41,7 +41,7 @@ const CircleButton = styled.button`
       &:active {
         background: #fa5252;
       }
-      transform: translate(-50%, 50%) rotate(45deg); // 기존의 값 + 45도 돌려주기
+      transform: translate(0%, 50%) rotate(45deg); // 기존의 값 + 45도 돌려주기
     `}
 `;
 
@@ -52,12 +52,15 @@ const InsertFormPositioner = styled.div`
 
 const InsertForm = styled.div`
   //  실제 폼
+
   background: #f8f9fa;
   padding: 32px;
   padding-bottom: 72px;
   border-bottom-left-radius: 16px; //모서리 삐져나오지 않게 처리
   border-bottom-right-radius: 16px;
   border-top: 1px solid #e9ecef;
+  display: flex;
+  margin-bottom: -80px;
 `;
 
 const Input = styled.input`
