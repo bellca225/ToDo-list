@@ -13,15 +13,13 @@ const CircleButton = styled.button`
 
   z-index: 5;
   cursor: pointer;
+
   width: 80px;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: absolute;
-  left: 50%;
-  bottom: 0px;
   transform: translate(-50%, 50%); // 정확한 버튼의 위치를 찾도록 함
 
   font-size: 60px;
@@ -50,9 +48,6 @@ const CircleButton = styled.button`
 const InsertFormPositioner = styled.div`
   // 특정 폼 위치 정해주기
   width: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
 `;
 
 const InsertForm = styled.div`
