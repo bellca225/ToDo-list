@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
 
+import { useTodoNextId } from "./TodoContext";
+
 const CircleButton = styled.button`
   background: #5c7cfa;
   &:hover {
@@ -76,6 +78,9 @@ const Input = styled.input`
 function TodoCreate() {
   const [open, SetOpen] = useState(false);
   const onToggle = () => SetOpen(!open); // 기존 open의 값을 반전시켜주는 기능
+
+  // const nextId = useTodoNextId();
+  // nextId.current += 1;
 
   return (
     <>
