@@ -3,23 +3,23 @@ import React, { useReducer, createContext, useContext, useRef } from "react";
 const initTodo = [
   {
     id: 1,
-    text: "프로젝트 생성하기",
-    done: true,
+    text: "nayoung의 Todolist입니다",
+    done: false,
   },
   {
     id: 2,
-    text: "컴포넌트 스타일링하기",
-    done: true,
+    text: "자유롭게 작성해보세요",
+    done: false,
   },
   {
     id: 3,
-    text: "Context 만들기",
-    done: false,
+    text: "Todolist 사용해보기",
+    done: true,
   },
   {
     id: 4,
-    text: "기능 구현하기",
-    done: false,
+    text: "목록 삭제해보기",
+    done: true,
   },
 ];
 

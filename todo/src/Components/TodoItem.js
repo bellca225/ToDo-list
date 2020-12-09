@@ -25,7 +25,7 @@ const CheckCircle = styled.div`
 const Text = styled.div`
   flex: 1px;
   font-size: 21px;
-  color: #495057;
+  color: #555;
   ${(props) =>
     props.done && //done.props가 들어오면 css로 색이 바뀜
     css`
