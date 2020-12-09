@@ -3,27 +3,28 @@ import React, { useReducer, createContext, useContext, useRef } from "react";
 const initTodo = [
   {
     id: 1,
-    text: "프로잭트 생성하기",
+    text: "프로젝트 생성하기",
     done: true,
   },
   {
     id: 2,
-    text: "프로잭트 생성하기",
+    text: "컴포넌트 스타일링하기",
     done: true,
   },
   {
     id: 3,
-    text: "프로잭트 생성하기",
-    done: true,
+    text: "Context 만들기",
+    done: false,
   },
   {
     id: 4,
-    text: "프로잭트 생성하기",
-    done: true,
+    text: "기능 구현하기",
+    done: false,
   },
 ];
 
 /*Create Toggle Remove*/
+
 function todoReducer(state, action) {
   switch (action.type) {
     case "CREATE":
@@ -40,7 +41,7 @@ function todoReducer(state, action) {
   }
 }
 
-const TodoStateContenxt = createContext();
+const TodoStateContext = createContext();
 const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
@@ -48,18 +49,18 @@ export function TodoProvider({ children }) {
   const [state, dispatch] = useReducer(todoReducer, initTodo);
   const nextId = useRef(5);
   return (
-    <TodoStateContenxt.Provider value={state}>
+    <TodoStateContext.Provider value={state}>
       <TodoDispatchContext.Provider value={dispatch}>
         <TodoNextIdContext.Provider value={nextId}>
           {children}
         </TodoNextIdContext.Provider>
       </TodoDispatchContext.Provider>
-    </TodoStateContenxt.Provider>
+    </TodoStateContext.Provider>
   );
 }
 
 export function useTodoState() {
-  const context = useContext(TodoStateContenxt);
+  const context = useContext(TodoStateContext);
   if (!context) {
     throw new Error("Can't not find TodoProvider");
   }

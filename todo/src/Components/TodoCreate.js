@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
 
-import { useTodoNextId } from "./TodoContext";
+import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 
 const CircleButton = styled.button`
   background: #5c7cfa;
@@ -52,7 +52,9 @@ const InsertFormPositioner = styled.div`
   width: 100%;
 `;
 
-const InsertForm = styled.div`
+/* onSubmit 이벤트 가능, 
+다만 html에서는 onSubmit 기능이 있을 때마다 새로고침이 되므로 onSubmit을 하나 지정해야 함*/
+const InsertForm = styled.form`
   //  실제 폼
 
   background: #f8f9fa;
@@ -77,17 +79,39 @@ const Input = styled.input`
 
 function TodoCreate() {
   const [open, SetOpen] = useState(false);
-  const onToggle = () => SetOpen(!open); // 기존 open의 값을 반전시켜주는 기능
+  const [value, setValue] = useState("");
 
-  // const nextId = useTodoNextId();
-  // nextId.current += 1;
+  const onToggle = () => SetOpen(!open); // 기존 open의 값을 반전시켜주는 기능
+  const onChange = (e) => setValue(e.target.value); // 인풋 상태 관리
+  const onSubmit = (e) => {
+    e.preventDefault(); // 원래 브라우저에서 하는 행동(여기서는 새로고침)을 방지해 줌
+    dispatch({
+      type: "CREATE",
+      todo: {
+        id: nextId.current,
+        text: value,
+        done: false,
+      },
+    });
+    setValue("");
+    SetOpen(false);
+    nextId.current += 1; // 현재 값에 1을 더해 줌 -> 다음 값은 기존에 4였으면 5로 변경
+  };
+
+  const dispatch = useTodoDispatch();
+  const nextId = useTodoNextId();
 
   return (
     <>
       {open && (
         <InsertFormPositioner>
-          <InsertForm>
-            <Input placeholder="할 일을 입력 후, Enter를 누르세요" autoFocus />
+          <InsertForm onSubmit={onSubmit}>
+            <Input
+              placeholder="할 일을 입력 후, Enter를 누르세요"
+              onChange={onChange}
+              value={value}
+              autoFocus
+            />
           </InsertForm>
         </InsertFormPositioner>
       )}
@@ -100,4 +124,4 @@ function TodoCreate() {
   );
 }
 
-export default TodoCreate;
+export default React.memo(TodoCreate);
