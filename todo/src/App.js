@@ -26,7 +26,7 @@ function App() {
         </TodoTemplate>
       </TodoProvider>
 
-      <p>https://github.com/Na-Young-Woo/ToDo_list</p>
+      
     </>
   );
 }
